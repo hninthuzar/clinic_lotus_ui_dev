@@ -38,9 +38,9 @@ const NavBar = ({changeLang}) => {
           <Menu.Item key="1"><Link to="/home"><HomeOutlined/></Link></Menu.Item>
           <Menu.Item key="2"><Link to="/user_account"><UserOutlined/></Link></Menu.Item>
           <div key="3" style={{float: "right"}}>
-            {/* <Button type="default" onClick={changeLang}>
+            <Button className="mr-3" type="default" onClick={changeLang}>
               <FormattedMessage id="lbl.changeLang" defaultMessage="English" />
-            </Button> */}
+            </Button>
 
             <Dropdown overlay={menu}>
               <Button type="default">
