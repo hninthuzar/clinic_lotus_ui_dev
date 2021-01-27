@@ -1,0 +1,43 @@
+### define service setting 
+@BaseEndPoint = http://localhost:13475
+@DataEndPoint = http://localhost:13475/api
+
+### ------------------------------------------------------------------------------------
+### Generate Token
+# @name auth
+post {{BaseEndPoint}}/token
+Content-Type: application/x-www-form-urlencoded
+
+username=admin
+&password=123
+&grant_type=password
+
+### getTimeTblList
+POST {{DataEndPoint}}/timeTable/getTimeTblList
+Content-Type: application/json
+Authorization: Bearer {{auth.response.body.access_token}}
+
+
+### getTimeTblByID
+POST {{DataEndPoint}}/timeTable/getTimeTblByID?timetbl_id_f=1
+Content-Type: application/json
+Authorization: Bearer {{auth.response.body.access_token}}
+
+
+### saveTimeTable
+POST {{DataEndPoint}}/timeTable/saveTimeTable
+Content-Type: application/json
+Authorization: Bearer {{auth.response.body.access_token}}
+
+{
+  "timetbl_id_f": 0,
+  "user_id_f": 1,
+  "date_f": "2020-7-24 ",
+  "is_morning_f": true,
+  "is_evening_f": true
+}
+
+### deleteTimeTable
+POST {{DataEndPoint}}/timeTable/deleteTimeTable?timetbl_id_f=1002
+Content-Type: application/json
+Authorization: Bearer {{auth.response.body.access_token}}
