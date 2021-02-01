@@ -1,16 +1,14 @@
 ### define service setting 
-@BaseEndPoint = http://localhost:13475
-@DataEndPoint = http://localhost:13475/api
+@DataEndPoint = http://localhost:3005/api
 
 ### ------------------------------------------------------------------------------------
 ### Generate Token
 # @name auth
-post {{BaseEndPoint}}/token
+post {{DataEndPoint}}/token
 Content-Type: application/x-www-form-urlencoded
 
-username=admin
-&password=123
-&grant_type=password
+username=admin&password=123&grant_type=password
+
 
 ### getAppointment
 POST {{DataEndPoint}}/appointment/getAppointmentList
@@ -32,11 +30,11 @@ Authorization: Bearer {{auth.response.body.access_token}}
 {
   "appoint_id_f": 0,
   "user_id_f": 1,
-  "date_f": "2020-07-24T00:00:00",
+  "date_f": "2021-02-1T00:00:00",
   "is_appoint_f": true
 }
 
 ### deleteAppointment
-POST {{DataEndPoint}}/appointment/deleteAppointment?appoint_id_f=1002
+POST {{DataEndPoint}}/appointment/deleteAppointment?appoint_id_f=1021
 Content-Type: application/json
 Authorization: Bearer {{auth.response.body.access_token}}

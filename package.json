@@ -7,16 +7,22 @@
         "@testing-library/react": "^9.5.0",
         "@testing-library/user-event": "^7.2.1",
         "antd": "^4.3.4",
+        "axios": "^0.21.1",
         "bootstrap": "^4.1.1",
         "joi-browser": "^13.4.0",
         "react": "^16.13.1",
         "react-dom": "^16.13.1",
         "react-intl": "^2.4.0",
-        "react-router-dom": "^4.3.1",
-        "react-scripts": "3.4.1"
+        "react-router-dom": "^5.2.0",
+        "react-scripts": "3.4.1",
+        "lodash": "^4.17.15",
+        "react-redux": "^7.2.0",
+        "react-toastify": "^6.0.5",
+        "redux": "^4.0.5",
+        "redux-thunk": "^2.3.0"
     },
     "scripts": {
-        "start": "react-scripts start",
+        "start": "set PORT=3002 && react-scripts start",
         "build": "react-scripts build",
         "test": "react-scripts test",
         "eject": "react-scripts eject"

@@ -26,11 +26,41 @@
     }
 }
 
-@media screen and (max-width: 362px) {
+@media screen and (max-width: 429px) {
+    .logo {
+        width: 60px;
+        height: 31px;
+        float: left;
+    }
+}
+
+@media screen and (max-width: 368px) {
     .logo {
         width: 50px;
         height: 31px;
         float: left;
+    }
+}
+
+@media screen and (max-width: 367px) {
+    .logo {
+        width: 40px;
+        height: 31px;
+        float: left;
+    }
+    .ant-menu-item, .ant-menu-submenu-title {
+        padding: 0px 10px;
+    }
+}
+
+@media screen and (max-width: 315px) {
+    .logo {
+        width: 30px;
+        height: 31px;
+        float: left;
+    }
+    .ant-menu-item, .ant-menu-submenu-title {
+        padding: 0px 7px;
     }
 }
 

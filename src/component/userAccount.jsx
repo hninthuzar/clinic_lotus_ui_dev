@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Form, Input, Button, DatePicker, Table, Checkbox } from "antd";
+import { Form, Input, Button, DatePicker, Table } from "antd";
 import moment from "moment";
 
 const dateFormat = "YYYY/MM/DD";
@@ -34,39 +34,43 @@ const data = [
   {
     key: "1",
     date: "2020/06/01",
-    name: "John Brown",
+    user_name: "John Brown",
     password: 32,
   },
   {
     key: "2",
     date: "2020/06/02",
-    name: "Jim Green",
+    user_name: "Jim Green",
     password: 42,
   },
   {
     key: "3",
     date: "2020/06/03",
-    name: "Joe Black",
+    user_name: "Joe Black",
     password: 32,
   },
 ];
+
 const rowSelection = {
-  onChange: (selectedRowKeys, selectedRows) => {
+  onChange: (selectedRowKeys, selectedRows) => {    
     console.log(`selectedRowKeys: ${selectedRowKeys}`, 'selectedRows: ', selectedRows);
   },
 };
 
 class UserAccount extends Component {
-  state = { value: moment(new Date()) };
+  state = { userData: {date: moment(new Date()), user_name: '', password: ''} };
   onChange = (value, dateString) => {
     console.log("Formatted Selected Date: ", dateString);
     if (!value) return;
     console.log("Selected Date: ", value.format(dateFormat));
   };
+
   onFinish = (values) => {
     console.log(values);
   };
-  render() {
+
+  render() { 
+    const {userData} = this.state;
     return (
       <div className="mt-4">
         <Form
@@ -79,7 +83,7 @@ class UserAccount extends Component {
             <Form.Item className="mb-2" label="Date">
               <DatePicker
                 style={{ width: "100%" }}
-                defaultValue={this.state.value}
+                defaultValue={userData.date}
                 format={dateFormat}
                 onChange={this.onChange}
               />
@@ -87,26 +91,26 @@ class UserAccount extends Component {
             <Form.Item
               className="mb-2"
               name="user_name"
-              label="User Name"
+              label="User Name"              
               rules={[
                 {
                   required: true,
                 },
               ]}
             >
-              <Input />
+              <Input value={userData.user_name}/>
             </Form.Item>
             <Form.Item
               className="mb-2"
               name="password"
-              label="Password"
+              label="Password"              
               rules={[
                 {
                   required: true,
                 },
               ]}
             >
-              <Input />
+              <Input value={userData.password}/>
             </Form.Item>
           </div>
           <div className="col-md-4 offset-md-4 text-right">
