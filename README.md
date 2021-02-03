@@ -10,4 +10,4 @@ Information
 ### language translate english to myanmar
 
 
-### If you need to backend code (C# asp.net) for study, you can contact my email. ( hninthuzar.itworld@gmail.com )
+### If you need to backend code (C# asp.net) and db for study, you can contact my email. ( hninthuzar.itworld@gmail.com )
